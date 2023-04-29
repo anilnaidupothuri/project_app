@@ -1,0 +1,41 @@
+<%= form_with(model: user) do |form| %>
+  <% if user.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+        <% user.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ <div>
+    Name : <%= form.text_field :name %>
+   
+  </div>
+<br>
+  <div>
+  Email : <%= form.text_field :email %>
+  </div>
+  <br>
+  <div>
+    
+    Password : <%= form.password_field :password %>
+  </div>
+  <br>
+  <div>
+   Password_confirmation : <%= form.password_field :password_confirmation %>
+</div>
+<br>
+  <div>
+   Number :
+    <%= form.text_field :number %>
+  </div>
+<br>
+  <div>
+    <%= form.submit:Signup %>
+  </div>
+
+<% end %>
+</center>
